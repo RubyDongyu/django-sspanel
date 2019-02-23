@@ -346,6 +346,7 @@ class OrderView(View):
 
 class AliPayCallBackView(View):
 
+    @csrf_exempt
     def post(self, request):
         data = dict(request.POST)
         signature = data.pop("sign")
